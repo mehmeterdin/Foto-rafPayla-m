@@ -1,0 +1,26 @@
+﻿@model ProjeOdevi.ViewModels.postIndex
+@{
+    ViewBag.Title = "Profil";
+}
+
+<div class="row">
+    <div class="col-md-4 col-md-offset-4">
+
+
+        @foreach (var p in Model.post)
+        {
+            <br />
+            <div><a href="@Url.Action("PostSil",new { p.Id })" class="btn btn-xs btn-danger">Postu Sil</a></div>
+            <br />
+            <div><img src="@p.resimURL" class="img-thumbnail"></div>
+            <br />
+            <div> <h3>@p.yorum</h3></div>
+            <br />
+            <br />
+
+
+
+        }
+    </div>
+
+</div>

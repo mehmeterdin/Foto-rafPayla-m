@@ -1,0 +1,32 @@
+﻿@model ProjeOdevi.ViewModels.KisiIndex
+@{
+    ViewBag.Title = "Takip Edilen Kullanıcılar";
+}
+<div class="container">
+    <div class="table-responsive">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>UserName</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var kisi in Model.Kisiler)
+                {
+
+                    <tr>
+                        <td>@kisi.Username</td>
+                        <td>
+                            <div class="btn-group">
+                                <a href="@Url.Action("UnFollow",new { kisi.Id })" class="btn btn-xs btn-danger">UnFollow</a>
+                            </div>
+
+                        </td>
+                    </tr>
+
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

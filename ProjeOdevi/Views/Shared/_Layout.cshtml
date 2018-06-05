@@ -1,0 +1,32 @@
+﻿
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <link href="~/Content/Styles/bootstrap.css" rel="stylesheet" />
+</head>
+<body>
+  
+                @if (User.Identity.IsAuthenticated)
+                {
+                    <div class="container">
+                        <ul class="nav nav-pills">
+                            <li>@Html.RouteLink("Ana Sayfa", "Home")</li>
+                            <li>@Html.RouteLink("Post Ekle", "NewPost")</li>
+                            <li>@Html.RouteLink("Kisiler", "Kullanicilar")</li>
+                            <li class="pull-right"><a href="@Url.RouteUrl("Logout")">Log Out</a></li>
+                            <li class="pull-right"><a href="@Url.RouteUrl("Profil")">Profil</a></li>
+                            <li class="pull-right"><a href="@Url.RouteUrl("Following")">Following</a></li>
+                        </ul>
+                    </div>
+                }
+                <div>
+
+                    @RenderBody()
+                </div>
+
+</body>
+</html>

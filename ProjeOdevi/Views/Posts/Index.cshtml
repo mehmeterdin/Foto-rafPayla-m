@@ -1,0 +1,24 @@
+﻿@model ProjeOdevi.ViewModels.postIndex
+@{
+    ViewBag.Title = "Instagram";
+}
+
+<div class="row">
+    <div class="col-md-4 col-md-offset-4">
+        <h1>Ana Sayfa</h1>
+
+
+        @foreach (var p in Model.post)
+        {
+            <br />
+            <img src="@p.resimURL" class="img-thumbnail">
+            <br />
+            <h3>@p.yorum</h3>
+            <br />
+            <br />
+
+
+        }
+    </div>
+
+</div>
